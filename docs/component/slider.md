@@ -74,6 +74,34 @@ export default {
  
 ![uniapp](https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/img/slider.png?t=201857)
 
+```
+slider第二次赋值失败；
+
+<template>
+	<view>
+       <slider @change="slider" :value="valuedemo"  show-value="true"/>
+	   <button type="primary" @tap="handertap">按钮</button>
+	</view>
+</template>
+<script>
+	export default {
+		data(){
+			return{
+				valuedemo:11,
+			}
+		},
+		methods: {
+			slider(e) {
+				console.log(e)
+			},
+			
+			handertap(){
+				  this.valuedemo = 100  
+			}
+		},
+	}
+</script>
+```
 
 **Tips**
 - 2.6.3以前，在PC端使用`slider`，需配置[H5模版](https://uniapp.dcloud.io/collocation/manifest?id=h5-template)，并引入[touch-emulator.js](https://github.com/dcloudio/touchemulator)
